@@ -348,7 +348,7 @@ This project is proprietary software of Milele Technologies. All rights reserved
 
 For support and inquiries:
 - **Email**: info@mileletechnologies.com
-- **Phone**: +255 716 693 327
+- **Phone**: +255 758553532
 - **Website**: https://www.mileletechnologies.com
 
 ## 🗺️ Roadmap
