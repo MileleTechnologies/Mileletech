@@ -687,7 +687,7 @@ hospitality, industrial, and institutional clients
                                 </a>
                             </div>
                             <div class="w-1/4 pl-4">
-                                <img src="{{ asset('images/tents222.png') }}"alt="ICT Solutions" class="rounded-lg w-full h-auto object-cover shadow-md" loading="lazy">
+                                <img src="{{ asset('images/services.jpg') }}"alt="ICT Solutions" class="rounded-lg w-full h-auto object-cover shadow-md" loading="lazy">
                             </div>
                         </div>
                     </div>
@@ -723,7 +723,7 @@ hospitality, industrial, and institutional clients
                                 </a>
                             </div>
                             <div class="w-1/4 pl-4">
-                                <img src="{{ asset('images/logo222.png') }}" alt="About Our Company" class="rounded-lg w-full h-auto object-cover shadow-md" loading="lazy">
+                                <img src="{{ asset('images/MAALUM.png') }}" alt="About Our Company" class="rounded-lg w-full h-auto object-cover shadow-md" loading="lazy">
                             </div>
                         </div>
                     </div>
@@ -763,7 +763,7 @@ hospitality, industrial, and institutional clients
 </a>
                             </div>
                             <div class="w-1/4 pl-4">
-                                <img src="{{ asset('images/calvin founder 3.png') }}" alt="Travel Blog" class="rounded-lg w-full h-auto object-cover shadow-md" loading="lazy">
+                                <img src="{{ asset('images/technews.jpg') }}" alt="Travel Blog" class="rounded-lg w-full h-auto object-cover shadow-md" loading="lazy">
                             </div>
                         </div>
                     </div>
@@ -803,7 +803,7 @@ hospitality, industrial, and institutional clients
 </a>
                             </div>
                             <div class="w-1/4 pl-4">
-                                <img src="{{ asset('images/net.jpeg') }}"alt="Contact Us" class="rounded-lg w-full h-auto object-cover shadow-md" loading="lazy">
+                                <img src="{{ asset('images/career.jpg') }}"alt="Contact Us" class="rounded-lg w-full h-auto object-cover shadow-md" loading="lazy">
                             </div>
                         </div>
                     </div>
@@ -844,7 +844,7 @@ hospitality, industrial, and institutional clients
                                 </a>
                             </div>
                             <div class="w-1/4 pl-4">
-                                <img src="{{ asset('images/tz.png') }}"alt="Contact Us" class="rounded-lg w-full h-auto object-cover shadow-md" loading="lazy">
+                                <img src="{{ asset('images/MAALUM.png') }}"alt="Contact Us" class="rounded-lg w-full h-auto object-cover shadow-md" loading="lazy">
                             </div>
                         </div>
                     </div>
@@ -913,11 +913,11 @@ hospitality, industrial, and institutional clients
                     <i class="fas fa-building"></i>
                     <span>AboutUs</span>
                 </a>
-                <a href="#" class="nav-link">
+                <a href="/services" class="nav-link">
                     <i class="fas fa-cogs"></i>
                     <span>Services</span>
                 </a>
-                <a href="#" class="nav-link">
+                <a href="/projects" class="nav-link">
                     <i class="fas fa-briefcase"></i>
                     <span>Projects</span>
                 </a>
@@ -925,7 +925,7 @@ hospitality, industrial, and institutional clients
                     <i class="fas fa-newspaper"></i>
                     <span>Blog</span>
                 </a>
-                <a href="#" class="nav-link">
+                <a href="/partners" class="nav-link">
                     <i class="fas fa-handshake"></i>
                     <span>Partners</span>
                 </a>
@@ -977,16 +977,16 @@ hospitality, industrial, and institutional clients
     <div class="bg-gray-100 py-3">
     <div class="container mx-auto px-4">
         <div class="flex items-center text-sm">
-            <a href="/" class="text-blue-600 hover:underline">Home</a>
+            <a href="/" class="text-blue-600 hover:underline"></a>
             <span class="mx-2 text-blue-400">›</span>
 
-            <a href="/services" class="text-blue-600 hover:underline">Our Services</a>
+            <a href="/services" class="text-blue-600 hover:underline"></a>
             <span class="mx-2 text-blue-400">›</span>
 
-            <a href="/solutions" class="text-blue-600 hover:underline">Solutions</a>
+            <a href="/solutions" class="text-blue-600 hover:underline"></a>
             <span class="mx-2 text-blue-400">›</span>
 
-            <span class="text-blue-600">Corporate & Industrial Technology</span>
+            <span class="text-blue-600"></span>
         </div>
     </div>
 </div>
@@ -1009,7 +1009,7 @@ hospitality, industrial, and institutional clients
             <div class="text-center p-8 w-full">
                 <h2 class="text-4xl font-bold mb-10">Transform Your Business With Innovative Technology Solutions</h2>
                 <div class="flex items-center justify-center mb-10">
-                    <img src="{{ asset('images/tz.png') }}" alt="Tanzania Flag" class="h-6 mr-3" loading="lazy">
+                    <img src="{{ asset('images/tz.webp') }}" alt="Tanzania Flag" class="h-6 mr-3" loading="lazy">
                     <p class="text-xl font-semibold">Leading technology solutions provider based in Tanzania</p>
                 </div>
                 <div class="space-y-6 text-lg text-gray-800">
@@ -1495,7 +1495,7 @@ const contentData = {
         description: 'We collaborate with leading technology providers and industry experts to deliver cutting-edge solutions that meet international standards.',
         buttonText: 'Our Partners',
         buttonLink: '/partners',
-        image: '{{ asset("images/techsupport.jpg") }}',
+        image: '{{ asset("images/apply.jpg") }}',
         imageAlt: 'Strategic Technology Partners'
     },
     'our-story': {
@@ -1503,7 +1503,7 @@ const contentData = {
         description: 'Serving diverse industries across Tanzania, our clients trust us for reliable, innovative, and cost-effective technology solutions.',
         buttonText: 'Client Portfolio',
         buttonLink: '/partners',
-        image: '{{ asset("images/techsupport.jpg") }}',
+        image: '{{ asset("images/logo.jpg") }}',
         imageAlt: 'Valued Client Portfolio'
     },
     'early-beginnings': {
@@ -1511,7 +1511,7 @@ const contentData = {
         description: 'Hear from our satisfied clients about how our solutions have transformed their businesses and delivered measurable results.',
         buttonText: 'Read Testimonials',
         buttonLink: '/reviews',
-        image: '{{ asset("images/techsupport.jpg") }}',
+        image: '{{ asset("images/reviews.jpg") }}',
         imageAlt: 'Client Success Stories'
     },
     'our-guides': {
@@ -1529,7 +1529,7 @@ const contentData = {
         description: 'Stay informed about the latest developments in ICT, emerging technologies, and digital transformation trends shaping the industry.',
         buttonText: 'Read Tech News',
         buttonLink: '/blog',
-        image: '{{ asset("images/techsupport.jpg") }}',
+        image: '{{ asset("images/technews.jpg") }}',
         imageAlt: 'Latest Technology News'
     },
     'wildlife-stories': {
@@ -1537,7 +1537,7 @@ const contentData = {
         description: 'In-depth articles written by our experts covering technology best practices, industry insights, and practical implementation guides.',
         buttonText: 'Browse Articles',
         buttonLink: '/blog',
-        image: '{{ asset("images/techsupport.jpg") }}',
+        image: '{{ asset("images/article.jpg") }}',
         imageAlt: 'Expert Technology Articles'
     },
     'kilimanjaro-insights': {
@@ -1545,7 +1545,7 @@ const contentData = {
         description: 'Real-world examples of how our solutions have helped businesses overcome challenges and achieve their technology goals.',
         buttonText: 'View Case Studies',
         buttonLink: '/blog',
-        image: '{{ asset("images/techsupport.jpg") }}',
+        image: '{{ asset("images/case.jpg") }}',
         imageAlt: 'Technology Case Studies'
     },
     'culture-traditions': {
@@ -1553,7 +1553,7 @@ const contentData = {
         description: 'Comprehensive training resources, tutorials, and documentation to help you make the most of our technology solutions.',
         buttonText: 'Access Resources',
         buttonLink: '/blog',
-        image: '{{ asset("images/techsupport.jpg") }}',
+        image: '{{ asset("images/kwoledge.jpg") }}',
         imageAlt: 'Training Resources'
     },
     
@@ -1571,7 +1571,7 @@ const contentData = {
         description: 'Kickstart your career with our comprehensive internship programs designed for students and recent graduates seeking hands-on experience.',
         buttonText: 'Apply for Internship',
         buttonLink: '/careers#internship-program',
-        image: '{{ asset("images/calvin founder 3.png") }}',
+        image: '{{ asset("images/services.jpg") }}',
         imageAlt: 'Internship Programs'
     },
     'booking-inquiries': {
@@ -1579,7 +1579,7 @@ const contentData = {
         description: 'Quick and easy online application process. Submit your resume and join our talent pool for future opportunities.',
         buttonText: 'Apply Online',
         buttonLink: '/careers#apply-online',
-        image: '{{ asset("images/techsupport.jpg") }}',
+        image: '{{ asset("images/apply.jpg") }}',
         imageAlt: 'Online Application Portal'
     },
     'careers': {
@@ -1597,7 +1597,7 @@ const contentData = {
         description: 'Browse our portfolio of successfully delivered projects across various industries including hospitality, healthcare, education, and manufacturing.',
         buttonText: 'Completed Projects',
         buttonLink: '/projects',
-        image: '{{ asset("images/techsupport.jpg") }}',
+        image: '{{ asset("images/MAALUM.png") }}',
         imageAlt: 'Completed Technology Projects'
     },
     'office-locations': {
@@ -1605,7 +1605,7 @@ const contentData = {
         description: 'In-depth analysis of challenging projects and how our innovative solutions delivered exceptional results for our clients.',
         buttonText: 'Case Studies',
         buttonLink: '/projects#webdesign',
-        image: '{{ asset("images/techsupport.jpg") }}',
+        image: '{{ asset("images/case.jpg") }}',
         imageAlt: 'Project Case Studies'
     },
     'booking-inquiries': {

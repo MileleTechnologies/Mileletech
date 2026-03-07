@@ -61,29 +61,23 @@
                         </div>
 
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            @forelse($jobPositions as $position)
                             <div class="border border-gray-200 rounded-xl p-6 hover:border-blue-200 transition-colors">
                                 <div class="flex items-start justify-between gap-3">
                                     <div>
-                                        <h3 class="text-lg font-bold text-gray-900">ICT Support Engineer</h3>
-                                        <div class="text-sm text-gray-600 mt-1">Full-time • On-site</div>
+                                        <h3 class="text-lg font-bold text-gray-900">{{ $position->title }}</h3>
+                                        <div class="text-sm text-gray-600 mt-1">{{ $position->employment_type }}</div>
                                     </div>
                                     <span class="text-xs font-bold text-blue-700 bg-blue-50 px-3 py-1 rounded-full">Open</span>
                                 </div>
-                                <p class="text-gray-700 mt-4 text-sm">Support networks, endpoints, and cloud services. Strong troubleshooting skills and customer focus required.</p>
+                                @if($position->description)
+                                <p class="text-gray-700 mt-4 text-sm">{{ $position->description }}</p>
+                                @endif
                                 <a href="#apply-online" class="mt-4 inline-block text-blue-700 font-semibold hover:text-blue-800">Apply now →</a>
                             </div>
-
-                            <div class="border border-gray-200 rounded-xl p-6 hover:border-blue-200 transition-colors">
-                                <div class="flex items-start justify-between gap-3">
-                                    <div>
-                                        <h3 class="text-lg font-bold text-gray-900">Automation Technician</h3>
-                                        <div class="text-sm text-gray-600 mt-1">Contract • Project-based</div>
-                                    </div>
-                                    <span class="text-xs font-bold text-blue-700 bg-blue-50 px-3 py-1 rounded-full">Open</span>
-                                </div>
-                                <p class="text-gray-700 mt-4 text-sm">Assist with installation, wiring, commissioning, and troubleshooting of automation and control systems.</p>
-                                <a href="#apply-online" class="mt-4 inline-block text-blue-700 font-semibold hover:text-blue-800">Apply now →</a>
-                            </div>
+                            @empty
+                            <p class="text-gray-500 col-span-2">No open positions at the moment. Check back soon or apply generally below.</p>
+                            @endforelse
                         </div>
 
                         <div class="mt-8 rounded-xl bg-blue-50 border-l-4 border-blue-600 px-6 py-5">
@@ -105,27 +99,20 @@
                             </div>
                         </div>
 
+                        @if($internshipTracks->isNotEmpty())
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            @foreach($internshipTracks as $track)
                             <div class="rounded-xl border border-gray-200 p-6">
-                                <div class="font-bold text-gray-900">Available Tracks</div>
-                                <div class="mt-4 space-y-2 text-sm text-gray-700">
-                                    <div class="flex items-center gap-2"><i class="fas fa-check-circle text-blue-600"></i><span>Network & Systems Support</span></div>
-                                    <div class="flex items-center gap-2"><i class="fas fa-check-circle text-blue-600"></i><span>Software & Business Systems</span></div>
-                                    <div class="flex items-center gap-2"><i class="fas fa-check-circle text-blue-600"></i><span>Automation & Control</span></div>
-                                    <div class="flex items-center gap-2"><i class="fas fa-check-circle text-blue-600"></i><span>Engineering Project Support</span></div>
-                                </div>
+                                <div class="font-bold text-gray-900">{{ $track->title }}</div>
+                                @if($track->description)
+                                <div class="mt-4 text-sm text-gray-700">{{ $track->description }}</div>
+                                @endif
                             </div>
-
-                            <div class="rounded-xl border border-gray-200 p-6">
-                                <div class="font-bold text-gray-900">What You’ll Gain</div>
-                                <div class="mt-4 space-y-2 text-sm text-gray-700">
-                                    <div class="flex items-center gap-2"><i class="fas fa-check-circle text-blue-600"></i><span>Mentorship and supervision</span></div>
-                                    <div class="flex items-center gap-2"><i class="fas fa-check-circle text-blue-600"></i><span>Real project exposure</span></div>
-                                    <div class="flex items-center gap-2"><i class="fas fa-check-circle text-blue-600"></i><span>Professional best practices</span></div>
-                                    <div class="flex items-center gap-2"><i class="fas fa-check-circle text-blue-600"></i><span>Recommendation based on performance</span></div>
-                                </div>
-                            </div>
+                            @endforeach
                         </div>
+                        @else
+                        <p class="text-gray-500">Internship program details coming soon.</p>
+                        @endif
 
                         <div class="mt-6">
                             <a href="#apply-online" class="inline-block bg-blue-600 text-white px-6 py-3 rounded-md hover:bg-blue-700 font-semibold transition-colors">Apply for Internship <span class="ml-1">→</span></a>
@@ -231,24 +218,29 @@
                             </div>
                         </div>
 
+                        @php
+                            $lookFor = $careerOpportunities->where('section', 'what_we_look_for');
+                            $departments = $careerOpportunities->where('section', 'departments');
+                        @endphp
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <div class="rounded-xl border border-gray-200 p-6">
                                 <div class="font-bold text-gray-900">What we look for</div>
                                 <div class="mt-4 space-y-2 text-sm text-gray-700">
-                                    <div class="flex items-center gap-2"><i class="fas fa-check-circle text-blue-600"></i><span>Integrity and accountability</span></div>
-                                    <div class="flex items-center gap-2"><i class="fas fa-check-circle text-blue-600"></i><span>Strong problem-solving skills</span></div>
-                                    <div class="flex items-center gap-2"><i class="fas fa-check-circle text-blue-600"></i><span>Teamwork and communication</span></div>
-                                    <div class="flex items-center gap-2"><i class="fas fa-check-circle text-blue-600"></i><span>Continuous learning mindset</span></div>
+                                    @forelse($lookFor as $item)
+                                    <div class="flex items-center gap-2"><i class="fas fa-check-circle text-blue-600"></i><span>{{ $item->label }}</span></div>
+                                    @empty
+                                    <p class="text-gray-400">Details coming soon.</p>
+                                    @endforelse
                                 </div>
                             </div>
-
                             <div class="rounded-xl border border-gray-200 p-6">
                                 <div class="font-bold text-gray-900">Departments</div>
                                 <div class="mt-4 space-y-2 text-sm text-gray-700">
-                                    <div class="flex items-center gap-2"><i class="fas fa-check-circle text-blue-600"></i><span>ICT Solutions</span></div>
-                                    <div class="flex items-center gap-2"><i class="fas fa-check-circle text-blue-600"></i><span>Power Systems</span></div>
-                                    <div class="flex items-center gap-2"><i class="fas fa-check-circle text-blue-600"></i><span>Automation & Control</span></div>
-                                    <div class="flex items-center gap-2"><i class="fas fa-check-circle text-blue-600"></i><span>Engineering Services</span></div>
+                                    @forelse($departments as $item)
+                                    <div class="flex items-center gap-2"><i class="fas fa-check-circle text-blue-600"></i><span>{{ $item->label }}</span></div>
+                                    @empty
+                                    <p class="text-gray-400">Details coming soon.</p>
+                                    @endforelse
                                 </div>
                             </div>
                         </div>

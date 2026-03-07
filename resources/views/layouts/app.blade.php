@@ -524,11 +524,11 @@
                     <i class="fas fa-briefcase"></i>
                     <span>Projects</span>
                 </a>
-                <a href="#" class="nav-link">
+                <a href="blog" class="nav-link">
                     <i class="fas fa-newspaper"></i>
                     <span>Blog</span>
                 </a>
-                <a href="#" class="nav-link">
+                <a href="parterns" class="nav-link">
                     <i class="fas fa-handshake"></i>
                     <span>Partners</span>
                 </a>
@@ -874,6 +874,22 @@
                         }
                     }
                 });
+            });
+
+            const dropdowns = document.querySelectorAll('.nav-dropdown');
+            dropdowns.forEach(dropdown => {
+                dropdown.addEventListener('mouseleave', function () {
+                    this.querySelectorAll('.sidebar-link').forEach(l => {
+                        l.classList.remove('active');
+                    });
+                });
+            });
+        });
+    </script>
+
+    @stack('scripts')
+</body>
+</html>
             });
 
             const dropdowns = document.querySelectorAll('.nav-dropdown');

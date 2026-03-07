@@ -161,16 +161,16 @@
             <div class="guide-details">
                 <h2 class="guide-name">George Lyimo</h2>
                 <p class="guide-title">Technical Director – Milele Technologies</p>
-                <p class="guide-description">
-                    George leads the technical execution of Milele's engineering & power systems, ICT infrastructure, and industrial automation projects. With deep expertise in electrical systems design, PLC controls, and multidisciplinary integration, he ensures every project meets rigorous safety and performance standards.
-                </p>
+               <p class="guide-description">
+    George specializes in IT infrastructure, network security, and low-voltage systems integration. With hands-on expertise in CCTV installation, network configuration, and access control systems, he ensures reliable and secure technology deployment across all projects.
+</p>
                 <div class="guide-specialties">
                     <div class="specialties-title">Specialties:</div>
                     <div class="specialties-list">
-                        <span class="specialty-tag">Electrical systems design</span>
-                        <span class="specialty-tag">PLC &amp; industrial automation</span>
-                        <span class="specialty-tag">Power systems &amp; HVAC</span>
-                        <span class="specialty-tag">Instrumentation &amp; control</span>
+                        <span class="specialty-tag">IT & Network Support</span>
+<span class="specialty-tag">CCTV & Security Systems</span>
+<span class="specialty-tag">Structured Cabling</span>
+<span class="specialty-tag">Access Control Systems</span>
                     </div>
                     <p class="languages">Phone: +255 716 693 327 &nbsp; Email: george@mileletechnologies.com</p>
                 </div>
@@ -184,9 +184,9 @@
             <div class="guide-details">
                 <h2 class="guide-name">Michael Flavian</h2>
                 <p class="guide-title">Full-Stack Software Developer | Open to New Opportunities</p>
-                <p class="guide-description">
-                    Michael builds scalable web and mobile applications, APIs, and business systems. He focuses on clean architecture, performance, and reliable delivery across modern frameworks.
-                </p>
+               <p class="guide-description">
+    Michael is a versatile Full-Stack Developer with over 3 years of experience architecting and delivering robust web and mobile solutions across diverse industries. He specializes in building scalable backend services using Laravel and Spring Boot, while crafting responsive and dynamic frontends with React, Next.js, and Angular. Michael has successfully led the development of complex business systems, including custom ERP modules, real-time dashboards, and cross-platform mobile applications built with Flutter. He is passionate about clean code, database optimization, and seamless API integration, ensuring every project is maintainable, performant, and aligned with business goals. Currently open to new opportunities where he can drive technical innovation and mentor growing teams.
+</p>
                 <div class="guide-specialties">
                     <div class="specialties-title">Expertise:</div>
                     <div class="specialties-list">
