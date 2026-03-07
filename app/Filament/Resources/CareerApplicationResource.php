@@ -4,6 +4,10 @@ namespace App\Filament\Resources;
 
 use App\Filament\Resources\CareerApplicationResource\Pages;
 use App\Models\CareerApplication;
+use Filament\Actions\EditAction;
+use Filament\Actions\ViewAction;
+use Filament\Actions\BulkActionGroup;
+use Filament\Actions\DeleteBulkAction;
 use Filament\Forms;
 use Filament\Resources\Resource;
 use Filament\Schemas\Schema;
@@ -38,7 +42,13 @@ class CareerApplicationResource extends Resource
                     ]),
                 Forms\Components\TextInput::make('position')->nullable()->maxLength(255),
                 Forms\Components\Textarea::make('message')->required()->columnSpanFull(),
-                Forms\Components\TextInput::make('cv_path')->label('CV Path')->disabled()->dehydrated(false),
+                Forms\Components\FileUpload::make('cv_path')
+                    ->label('CV / Resume')
+                    ->directory('cvs')
+                    ->acceptedFileTypes(['application/pdf', 'application/msword', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'])
+                    ->downloadable()
+                    ->openable()
+                    ->columnSpanFull(),
                 Forms\Components\Select::make('status')
                     ->required()
                     ->options([
@@ -85,8 +95,15 @@ class CareerApplicationResource extends Resource
                         'general' => 'General',
                     ]),
             ])
-            ->actions([])
-            ->bulkActions([]);
+            ->recordActions([
+                ViewAction::make(),
+                EditAction::make(),
+            ])
+            ->toolbarActions([
+                BulkActionGroup::make([
+                    DeleteBulkAction::make(),
+                ]),
+            ]);
     }
 
     public static function getEloquentQuery(): Builder

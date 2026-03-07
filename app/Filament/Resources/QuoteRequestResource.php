@@ -4,6 +4,11 @@ namespace App\Filament\Resources;
 
 use App\Filament\Resources\QuoteRequestResource\Pages;
 use App\Models\QuoteRequest;
+use Filament\Actions\Action;
+use Filament\Actions\EditAction;
+use Filament\Actions\ViewAction;
+use Filament\Actions\BulkActionGroup;
+use Filament\Actions\DeleteBulkAction;
 use Filament\Forms;
 use Filament\Resources\Resource;
 use Filament\Schemas\Schema;
@@ -66,8 +71,24 @@ class QuoteRequestResource extends Resource
                         'resolved' => 'Resolved',
                     ]),
             ])
-            ->actions([])
-            ->bulkActions([]);
+            ->recordActions([
+                ViewAction::make(),
+                EditAction::make(),
+                Action::make('resolve')
+                    ->label('Resolve')
+                    ->icon('heroicon-o-check-circle')
+                    ->color('success')
+                    ->requiresConfirmation()
+                    ->modalHeading('Resolve Quote Request')
+                    ->modalDescription('Mark this quote request as resolved?')
+                    ->action(fn ($record) => $record->update(['status' => 'resolved', 'reviewed_at' => now()]))
+                    ->visible(fn ($record) => $record->status !== 'resolved'),
+            ])
+            ->toolbarActions([
+                BulkActionGroup::make([
+                    DeleteBulkAction::make(),
+                ]),
+            ]);
     }
 
     public static function getEloquentQuery(): Builder
