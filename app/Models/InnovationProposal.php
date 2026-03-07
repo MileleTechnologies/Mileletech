@@ -4,15 +4,15 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class ContactMessage extends Model
+class InnovationProposal extends Model
 {
     protected $fillable = [
         'name',
+        'organization',
         'email',
-        'category',
-        'subject',
-        'message',
+        'phone',
+        'innovation_area',
+        'project_idea',
         'status',
-        'reviewed_at',
     ];
 }
