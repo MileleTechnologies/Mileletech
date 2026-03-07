@@ -15,7 +15,11 @@ Route::get('/industries', function () {
 });
 
 Route::get('/careers', function () {
-    return view('careers');
+    return view('careers', [
+        'jobPositions'        => \App\Models\JobPosition::where('is_active', true)->orderBy('sort_order')->get(),
+        'internshipTracks'    => \App\Models\InternshipTrack::where('is_active', true)->orderBy('sort_order')->get(),
+        'careerOpportunities' => \App\Models\CareerOpportunity::where('is_active', true)->orderBy('sort_order')->get(),
+    ]);
 })->name('careers');
 
 Route::post('/careers/apply', [CareerApplicationController::class, 'store'])->name('careers.apply');
@@ -47,6 +51,12 @@ Route::get('/partners', function () {
 Route::get('/contact', function () {
     return view('contact');
 })->name('contact');
+
+Route::get('/innovation-hub', function () {
+    return view('innovation');
+})->name('innovation-hub');
+
+Route::post('/innovation-hub', [\App\Http\Controllers\InnovationProposalController::class, 'store'])->name('innovation.store');
 
 Route::post('/contact', function () {
     return app(ContactMessageController::class)->store(request());
